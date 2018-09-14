@@ -3,3 +3,5 @@ type: module
 description: "Experimental UI improvement"
 package: commerce_admin_order_advanced
 core: 8.x
+dependencies:
+  - serialization
