@@ -42,7 +42,7 @@ function updateBundleHashes(assetManifest, librariesConfig) {
             librariesConfig.commerce_admin_order_advanced.js[
               cur.old ? cur.old : cur
             ];
-          acc[cur.new ? cur.new : cur] = propVal;
+          acc[cur.new ? 'js/build/' + cur.new : cur] = propVal;
           return acc;
         }, {})
     }

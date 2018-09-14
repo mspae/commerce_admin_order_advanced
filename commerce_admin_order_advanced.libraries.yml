@@ -1,5 +1,5 @@
 commerce_admin_order_advanced:
   version: VERSION
   js:
-    static/js/main.972a790c.js:
+    js/build/static/js/main.972a790c.js:
       external: false
