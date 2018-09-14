@@ -1,7 +1,7 @@
 {
-  "name": "drupal/commerce",
+  "name": "drupal/commerce_admin_order_advanced",
   "type": "drupal-module",
-  "description": "Drupal Commerce is a flexible eCommerce solution.",
+  "description": ".",
   "homepage": "http://drupal.org/project/commerce",
   "license": "GPL-2.0+",
   "repositories": {
