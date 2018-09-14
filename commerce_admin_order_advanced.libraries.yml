@@ -3,3 +3,5 @@ commerce_admin_order_advanced:
   js:
     js/build/static/js/main.972a790c.js:
       external: false
+  dependencies:
+    - core/drupalSettings
