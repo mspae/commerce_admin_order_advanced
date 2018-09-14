@@ -11,11 +11,7 @@
     }
   },
   "require": {
-    "oomphinc/composer-installers-extender": "^1.1",
-    "npm-asset/react": "dev-master",
-    "npm-asset/react-dom": "dev-master",
-    "npm-asset/emotion": "^9.2",
-    "npm-asset/carbon-components-react": "^6"
+    "oomphinc/composer-installers-extender": "^1.1"
   },
   "minimum-stability": "dev",
   "extra": {
