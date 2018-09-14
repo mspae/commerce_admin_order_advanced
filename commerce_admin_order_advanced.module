@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function commerce_admin_order_advanced_theme_registry_alter(&$theme_registry) {
+  // Override the default template theme for admin orders.
+  if (!empty($theme_registry['commerce_order__admin'])) {
+    $theme_registry['commerce_order__admin']['path'] = drupal_get_path('module', 'commerce_admin_order_advanced') . '/templates';
+    $theme_registry['commerce_order__admin']['template'] = 'commerce-order--admin';
+  }
+}
