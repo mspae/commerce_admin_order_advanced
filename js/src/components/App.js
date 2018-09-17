@@ -1,26 +1,23 @@
 import React, { Component } from "react";
 import { isDev } from "../utils/env";
-import { billingProfile, order, orderItems } from "../types";
 
-import { OrderItem } from ".";
+import { Order } from ".";
+import { getValueArray } from "../normalizers";
 
 class App extends Component {
   render() {
     const {
-      order: { order_items },
-      orderItems
+      order: {
+        uuid,
+        type: [{ target_id }]
+      }
     } = this.props;
-    return (
-      <div>
-        {order_items.map(({ target_uuid }) => (
-          <OrderItem key={target_uuid} item={orderItems[target_uuid]} />
-        ))}
-      </div>
-    );
+    return <Order uuid={getValueArray(uuid)} type={target_id} />;
   }
 }
 
-if (isDev()) {
+if (isDev) {
+  const { billingProfile, order, orderItems } = require("../types");
   App.propTypes = {
     billingProfile: billingProfile,
     order: order,
