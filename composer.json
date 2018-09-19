@@ -5,27 +5,15 @@
   "homepage": "http://drupal.org/project/commerce",
   "license": "GPL-2.0+",
   "repositories": {
-    "asset-packagist": {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
+    "improved_contrib_ui_core": {
+      "type": "vcs",
+      "url": "https://github.com/1xinternet/improved_contrib_ui_core"
     }
   },
   "require": {
+    "oomphinc/composer-installers-extender": "^1.1",
+    "drupal/improved_contrib_ui_core": "dev-master"
     "drupal/jsonapi": "^1.0",
-    "oomphinc/composer-installers-extender": "^1.1"
   },
-  "minimum-stability": "dev",
-  "extra": {
-    "installer-types": [
-      "bower-asset",
-      "npm-asset"
-    ],
-    "installer-paths": {
-      "web/libraries/{$name}": [
-        "type:drupal-library",
-        "type:bower-asset",
-        "type:npm-asset"
-      ]
-    }
-  }
+  "minimum-stability": "dev"
 }

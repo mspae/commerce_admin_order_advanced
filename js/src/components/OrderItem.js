@@ -1,44 +1,61 @@
 import React from "react";
-import {
-  Dimmer,
-  Loader,
-  Segment,
-  Grid,
-  Input,
-  Button
-} from "semantic-ui-react";
+import { Grid, Input, Button, Image, Header } from "semantic-ui-react";
 import { connect } from "react-redux";
-import get from "lodash.get";
+import { getQueryFromRIO, EntityLoader } from "icu";
 import { isDev } from "../utils";
-
-import { EntityQuery } from ".";
+import {
+  getPurchasedEntity,
+  getImages,
+  getTitle,
+  getQuantity,
+  getUrl,
+  getUnitPrice
+} from "../normalizers";
 
 const OrderItem = ({ bundle, type, uuid }) => (
-  <EntityQuery bundle={bundle} type={type} uuid={uuid}>
-    {({ resources, loading, error }) => (
-      <Dimmer.Dimmable as={Segment}>
-        <Dimmer inverted active={loading}>
-          <Loader size="mini" />
-        </Dimmer>
-        {(resources || []).map(resource => (
-          <Grid key={resource.id}>
-            <Grid.Row columns={2}>
-              <Grid.Column>{get(resource, "attributes.title")}</Grid.Column>
-              <Grid.Column>
-                <Input
-                  type="number"
-                  value={get(resource, "attributes.quantity")}
-                />
-              </Grid.Column>
-              <Grid.Column>
-                <Button circular icon="delete" />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
-        ))}
-      </Dimmer.Dimmable>
-    )}
-  </EntityQuery>
+  <EntityLoader bundle={bundle} type={type} uuid={uuid}>
+    {(resources, loading, error) =>
+      resources.map(entity => (
+        <Grid key={entity.id} padded>
+          <Grid.Column width={2}>
+            <EntityLoader {...getQueryFromRIO(getPurchasedEntity(entity))}>
+              {(purchasedEntities, loading, error) =>
+                purchasedEntities.map(
+                  purchasedEntity =>
+                    getImages(purchasedEntity) && (
+                      <EntityLoader
+                        key={purchasedEntity.id}
+                        {...getQueryFromRIO(getImages(purchasedEntity)[0])}
+                      >
+                        {(imageResources, loading, error) =>
+                          imageResources.map(imageEntity => (
+                            <Image
+                              key={imageEntity.id}
+                              src={getUrl(imageEntity)}
+                              size="mini"
+                            />
+                          ))
+                        }
+                      </EntityLoader>
+                    )
+                )
+              }
+            </EntityLoader>
+          </Grid.Column>
+          <Grid.Column width={9}>
+            <Header as="h4">{getTitle(entity)}</Header>
+            {getUnitPrice(entity)}
+          </Grid.Column>
+          <Grid.Column width={3}>
+            <Input fluid type="number" value={getQuantity(entity)} />
+          </Grid.Column>
+          <Grid.Column width={1}>
+            <Button circular icon="delete" />
+          </Grid.Column>
+        </Grid>
+      ))
+    }
+  </EntityLoader>
 );
 
 if (isDev) {
