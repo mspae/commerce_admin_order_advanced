@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf84b48a8b64771d3c94f5afbf1832a4",
+    "content-hash": "2828b95a59d870e12af5c8371960e99e",
     "packages": [
         {
             "name": "composer/installers",
@@ -127,38 +127,33 @@
             "time": "2018-08-27T06:10:37+00:00"
         },
         {
-            "name": "npm-asset/react",
+            "name": "drupal/improved_contrib_ui_core",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/facebook/react.git",
-                "reference": "8bc0bcabe7505a991e9e40a4b8ad1d3eb9b5723f"
+                "url": "https://github.com/1xINTERNET/improved_contrib_ui_core.git",
+                "reference": "264a0bd6131521d4b66e58b9872360e52f8b70e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/react/zipball/8bc0bcabe7505a991e9e40a4b8ad1d3eb9b5723f",
-                "reference": "8bc0bcabe7505a991e9e40a4b8ad1d3eb9b5723f",
-                "shasum": null
+                "url": "https://api.github.com/repos/1xINTERNET/improved_contrib_ui_core/zipball/264a0bd6131521d4b66e58b9872360e52f8b70e8",
+                "reference": "264a0bd6131521d4b66e58b9872360e52f8b70e8",
+                "shasum": ""
             },
-            "type": "npm-asset",
-            "time": "2018-09-14T00:44:08+00:00"
-        },
-        {
-            "name": "npm-asset/react-dom",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facebook/react.git",
-                "reference": "8a8d973d3cc5623676a84f87af66ef9259c3937c"
+            "require": {
+                "oomphinc/composer-installers-extender": "^1.1"
             },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facebook/react/zipball/8a8d973d3cc5623676a84f87af66ef9259c3937c",
-                "reference": "8a8d973d3cc5623676a84f87af66ef9259c3937c",
-                "shasum": null
+            "type": "drupal-module",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": ".",
+            "homepage": "http://drupal.org/project/commerce",
+            "support": {
+                "source": "https://github.com/1xINTERNET/improved_contrib_ui_core/tree/master",
+                "issues": "https://github.com/1xINTERNET/improved_contrib_ui_core/issues"
             },
-            "type": "npm-asset",
-            "time": "2018-09-09T15:54:31+00:00"
+            "time": "2018-09-19T09:58:34+00:00"
         },
         {
             "name": "oomphinc/composer-installers-extender",
@@ -207,8 +202,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "npm-asset/react": 20,
-        "npm-asset/react-dom": 20
+        "drupal/improved_contrib_ui_core": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

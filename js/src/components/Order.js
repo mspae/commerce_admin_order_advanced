@@ -1,26 +1,26 @@
-import React from "react";
-import { Dimmer, Loader, Header, Segment } from "semantic-ui-react";
-import { EntityQuery, OrderItem } from ".";
-import { t } from "../utils";
-import { getQueryFromRIO } from "../normalizers";
-import get from "lodash.get";
+import React, { Fragment } from "react";
+import { Header, Segment } from "semantic-ui-react";
+import { OrderItem } from ".";
+import { t, EntityLoader, getQueryFromRIO } from "icu";
+import { getOrderItems } from "../normalizers";
 
 const Order = ({ uuid, type }) => (
-  <EntityQuery bundle="commerce_order" type={type} uuid={uuid}>
-    {({ resources, loading, error }) => (
-      <Dimmer.Dimmable as={Segment}>
-        <Dimmer inverted active={loading}>
-          <Loader size="mini" />
-        </Dimmer>
-        <Header as="h2">{t("Order items")}</Header>
-        {(resources || []).map((resource, i) =>
-          get(resource, "relationships.order_items.data", []).map((rio, j) => (
-            <OrderItem key={j} {...getQueryFromRIO(rio)} />
-          ))
-        )}
-      </Dimmer.Dimmable>
-    )}
-  </EntityQuery>
+  <Fragment>
+    <Header as="h2" attached="top">
+      {t("Order items")}
+    </Header>
+    <Segment attached>
+      <EntityLoader bundle="commerce_order" type={type} uuid={uuid}>
+        {(resources, loading, error) =>
+          resources.map((resource, i) =>
+            getOrderItems(resource, []).map((rio, j) => (
+              <OrderItem key={j} {...getQueryFromRIO(rio)} />
+            ))
+          )
+        }
+      </EntityLoader>
+    </Segment>
+  </Fragment>
 );
 
 export { Order };
