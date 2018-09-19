@@ -6,3 +6,4 @@ core: 8.x
 dependencies:
   - serialization
   - improved_contrib_ui_core
+  - jsonapi
