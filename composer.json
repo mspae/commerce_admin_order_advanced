@@ -5,14 +5,14 @@
   "homepage": "http://drupal.org/project/commerce",
   "license": "GPL-2.0+",
   "repositories": {
-    "improved_contrib_ui_core": {
+    "editable": {
       "type": "vcs",
-      "url": "https://github.com/1xinternet/improved_contrib_ui_core"
+      "url": "https://github.com/1xinternet/editable"
     }
   },
   "require": {
     "oomphinc/composer-installers-extender": "^1.1",
-    "drupal/improved_contrib_ui_core": "dev-master",
+    "drupal/editable": "dev-master",
     "drupal/jsonapi": "^1.0"
   },
   "minimum-stability": "dev"

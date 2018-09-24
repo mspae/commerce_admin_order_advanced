@@ -1,9 +1,9 @@
 commerce_admin_order_advanced:
   version: VERSION
   js:
-    js/build/static/js/main.948520ac.js:
-      external: true
+    #js/build/static/js/main.948520ac.js:
+    #  external: true
+    http://localhost:3000/static/js/bundle.js: { external: true }
   dependencies:
-    - core/drupalSettings
-    - improved_contrib_ui_core/main
+    - editable_base_components/development
   css: {}
