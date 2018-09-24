@@ -1,9 +1,0 @@
-commerce_admin_order_advanced:
-  version: VERSION
-  js:
-    #js/build/static/js/main.948520ac.js:
-    #  external: true
-    http://localhost:3000/static/js/bundle.js: { external: true }
-  dependencies:
-    - editable_base_components/development
-  css: {}

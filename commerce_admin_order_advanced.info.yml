@@ -1,9 +1,7 @@
 name: Commerce Admin Order Advanced
 type: module
-description: "Experimental UI improvement"
+description: "Experimental UI improvements for Drupal Commerce order administration (This module doesn't do anything on its own)"
 package: commerce_admin_order_advanced
 core: 8.x
 dependencies:
-  - serialization
   - editable
-  - jsonapi

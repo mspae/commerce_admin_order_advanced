@@ -1,0 +1,7 @@
+name: Commerce Order Billing Profile Edit
+type: module
+description: "Edit the Billing Profile on the order view screen"
+package: commerce_admin_order_advanced
+core: 8.x
+dependencies:
+  - editable

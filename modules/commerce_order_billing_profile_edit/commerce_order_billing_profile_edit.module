@@ -1,0 +1,7 @@
+<?php
+
+function commerce_order_billing_profile_edit_preprocess_field(&$variables) {
+    if ($variables['entity_type'] == 'profile' && $variables['field_name'] == 'address') {
+        $variables['attributes']['data-editable'] = 'true';
+    }
+}
