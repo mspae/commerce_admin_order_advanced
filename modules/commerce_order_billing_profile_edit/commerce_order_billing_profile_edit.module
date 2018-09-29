@@ -1,7 +1,21 @@
 <?php
 
+use Drupal\Component\Serialization\Json;
+
 function commerce_order_billing_profile_edit_preprocess_field(&$variables) {
-    if ($variables['entity_type'] == 'profile' && $variables['field_name'] == 'address') {
-        $variables['attributes']['data-editable'] = 'true';
+    $element = $variables['element'];
+    $bundle = $element['#bundle'];
+    $entity_type = $element['#entity_type'];
+
+    if ($bundle == 'customer' && $entity_type == 'profile' && $variables['field_name'] == 'address') {
+        $entity = $variables['element']['#object'];
+        $entityData = \Drupal::service('jsonapi.entity.to_jsonapi')->normalize($entity);
+
+        $editableInitialisationData = array(
+            'initialData' => $entityData
+        );
+
+        $variables['attributes']['data-editable'] = Json::encode($editableInitialisationData);
+        $variables['#attached']['library'][] =  'commerce_order_billing_profile_edit/development';
     }
 }
