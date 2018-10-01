@@ -1,13 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import {
-  Query,
-  EditableEntity,
-  Provider,
-  store,
-  css
-} from "@1xinternet/editable-core";
-import { Input } from "@1xinternet/editable-base-components";
+import { Query, EditableEntity, Provider, css } from "@drupal-editable/core";
+import { Input } from "@drupal-editable/seven-base-components";
 
 const { t } = Drupal;
 
@@ -40,6 +34,7 @@ export class EditableAddress extends PureComponent {
   }
 
   render() {
+    const { store } = this.props;
     return (
       <Provider store={store}>
         <Query {...this.state}>

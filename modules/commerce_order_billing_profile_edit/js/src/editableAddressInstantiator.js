@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import { EditableAddress } from "./components";
 
 export class EditableAddressInstantiator {
-  constructor(el) {
+  constructor(el, store) {
+    this.store = store;
     this.el = el;
     this.init();
   }
@@ -27,7 +28,10 @@ export class EditableAddressInstantiator {
 
   render() {
     try {
-      ReactDOM.render(<EditableAddress data={this.data} />, this.el);
+      ReactDOM.render(
+        <EditableAddress data={this.data} store={this.store} />,
+        this.el
+      );
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error(

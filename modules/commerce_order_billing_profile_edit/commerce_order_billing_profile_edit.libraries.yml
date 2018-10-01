@@ -1,13 +1,13 @@
 production:
   version: VERSION
   js:
-    js/dist/commerce_order_billing_profile_edit.js: {}
+    js/dist/lib.js: {}
   dependencies:
-    - editable_base_components/production
+    - editable_seven_base_components/production
 
 development:
   version: VERSION
   js:
-    js/dist/commerce_order_billing_profile_edit.dev.js: {}
+    js/dist/lib.dev.js: {}
   dependencies:
-    - editable_base_components/development
+    - editable_seven_base_components/development
