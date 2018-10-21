@@ -4,5 +4,5 @@ description: "Edit the Billing Profile on the order view screen"
 package: commerce_admin_order_advanced
 core: 8.x
 dependencies:
-  - editable
-  - editable_seven_base_components
+  - editable:editable
+  - editable:editable_seven_base_components

@@ -4,5 +4,5 @@ description: "Experimental UI improvements for Drupal Commerce order administrat
 package: commerce_admin_order_advanced
 core: 8.x
 dependencies:
-  - editable
-  - editable_seven_base_components
+  - editable:editable
+  - editable:editable_seven_base_components
