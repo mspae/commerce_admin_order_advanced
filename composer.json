@@ -4,15 +4,8 @@
   "description": ".",
   "homepage": "http://drupal.org/project/commerce",
   "license": "GPL-2.0+",
-  "repositories": {
-    "editable": {
-      "type": "vcs",
-      "url": "https://github.com/1xinternet/editable"
-    }
-  },
   "require": {
-    "oomphinc/composer-installers-extender": "^1.1",
-    "drupal/editable": "dev-master",
+    "drupal/editable": "^1.0",
     "drupal/jsonapi": "^1.0"
   },
   "minimum-stability": "dev"
